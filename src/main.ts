@@ -11,7 +11,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import markdownItKatex from 'markdown-it-katex';
 import 'katex/dist/katex.min.css';
 
-VMdEditor.use(VuepressTheme);
+//VMdEditor.use(githubTheme);
 
 // 配置 markdown-it 插件
 // VMdEditor.extendMarkdown((md:any) => {

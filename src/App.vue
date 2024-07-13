@@ -8,7 +8,10 @@ import katex from 'katex';
 VMdEditor.use(githubTheme);
 VMdEditor.use(createKatexPlugin());
 
-const data:string = ref("### 1111"); 
+const data:string = ref(
+  `### 标题1
+> 这里是引用
+$$\\sum_{i=1}^n a_i=0$$`); 
 
 
 function downloadMarkdown() {
@@ -29,17 +32,43 @@ const markdownContent = data.value;
 </script>
 
 <template>
-      你好啊
-
-      <v-md-editor  v-model="data" />
-      
-
-      这是下面
-
-
-<button @click="downloadMarkdown">下载</button>
+  <div class="app-container" >
+    <v-md-editor v-model="data" class="editor" height="660px" />
+    <div class="button-container">
+      <button @click="downloadMarkdown" class="download-button">下载</button>
+   
+    </div>
+    Copyright © 2024Elmo
+  </div>
 </template>
 
-<style scoped>
+<style  scoped>
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f8d4e1;
+}
+.editor {
+  width: 800px;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(237, 162, 191, 0.1);
+}
+.button-container {
+  margin-top: 10px;
+}
+.download-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f5b1d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 </style>
