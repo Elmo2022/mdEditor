@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@kangc/v-md-editor": "^2.3.18",
+    "ant-design-vue": "^4.2.3",
     "katex": "^0.16.10",
     "markdown-it-katex": "^2.0.3",
     "vue": "^3.4.29",

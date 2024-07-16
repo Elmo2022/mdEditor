@@ -39,7 +39,6 @@ const markdownContent = data.value;
       <button @click="downloadMarkdown" class="download-button">下载</button>
    
     </div>
-    Copyright © 2024Elmo
   </div>
 </template>
 
