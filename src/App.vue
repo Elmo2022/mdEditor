@@ -16,7 +16,7 @@ const toVideoPlayer = () => {
 <a-button @click="toMdEditor" type="primary" primary>mdEditor</a-button>
 <a-button @click="toVideoPlayer" type="primary" primary>videoPlayer</a-button>
 <router-view></router-view>
-Copyright © 2024Elmo
+
 </template>
 
 

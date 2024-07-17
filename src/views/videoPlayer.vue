@@ -1,39 +1,27 @@
 <template>
-  111
   <div class="video-player">
-    <video
-      ref="videoElement"
-      controls
-      @play="handlePlay"
-      @pause="handlePause"
-      @ended="handleEnded"
-    >
-      <source :src="url" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="controls">
-      <!-- 控制按钮等 -->
-    </div>
+   {{data}}
   </div>
+  <button @click="changeData">修改</button>
+
+<uls :message="messages" @update:message="updateMessages" />
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-const url = ref<string>("data.mp4")
-const videoElement = ref(null);
+import uls from "../components/ul.vue"
 
+import { reactive, ref,toRaw } from 'vue';
+const data = ref<string>("这里是测试一下自己学的vue知识")
+const changeData = () => {
+  data.value = "修改后的数据"
+}
+const messages =  reactive<string[]>(["詹姆斯","乔丹","杜兰特"])
 
-const handlePlay = () => {
-  console.log('Video is playing');
-};
+const updateMessages = (newMessages) => {
+  messages.splice(0, messages.length, ...newMessages);
+  console.log(toRaw(messages))
+}
 
-const handlePause = () => {
-  console.log('Video is paused');
-};
-
-const handleEnded = () => {
-  console.log('Video has ended');
-};
 </script>
 
 <style scoped>
