@@ -12,8 +12,9 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import 'katex/dist/katex.min.css';
 import Antd from 'ant-design-vue';
 
-
+import globalComponent from '../src/components/globalComponent.vue';
 const app = createApp(App);
 app.use(router)
 app.use(Antd)
-app.use(VMdEditor).mount('#app')
+app.use(VMdEditor)
+app.component('global-component', globalComponent).mount('#app')
