@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>我是全局组件</h1>
-    <global-component></global-component>
+    <h1>hh我是全局组件</h1>
+
 </div>
 </template>
 

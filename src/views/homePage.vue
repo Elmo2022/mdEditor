@@ -1,6 +1,6 @@
 <template>
   这里是我的首页
-  <global-component>
+  <global-component></global-component>
 </template>
 
 <script>
