@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import router from './router';
+import {createPinia} from 'pinia'
 import App from './App.vue'
 import VMdEditor from '@kangc/v-md-editor';
 import '@kangc/v-md-editor/lib/style/base-editor.css';
@@ -15,6 +16,7 @@ import Antd from 'ant-design-vue';
 import globalComponent from '../src/components/globalComponent.vue';
 const app = createApp(App);
 app.use(router)
+app.use(createPinia())
 app.use(Antd)
 app.use(VMdEditor)
 app.component('global-component', globalComponent).mount('#app')
