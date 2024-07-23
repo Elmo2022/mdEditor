@@ -15,11 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'VideoPlayer',
     component: VideoPlayer,
   },
-  {
-    path: '/mdEditor',
-    name: 'mdEditor',
-    component: mdEditor,
-  },
+  // {
+  //   path: '/mdEditor',
+  //   name: 'mdEditor',
+  //   component: mdEditor,
+  // },
   {
     path: '/eventBus',
     name: 'eventBus',
