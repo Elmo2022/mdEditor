@@ -5,9 +5,10 @@ import eventBus from '../src/views/eventBus.vue'
 import { ref } from 'vue'
 import request from '../src/api'
 import pinia from '../src/views/pinia.vue'
+import watchView from '../src/views/watchView.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
-const poem = ref('这里将会随机展示一句诗词')
+const poem = ref('')
 const toMdEditor = () => {
   router.push('/mdEditor')
 }
@@ -19,6 +20,9 @@ const toEventBus = () => {
 }
 const toPinia = () => {
   router.push('/pinia')
+}
+const toWatch = () => {
+  router.push('/watchView')
 }
 async function fetchData() {
   try {
@@ -41,6 +45,7 @@ const requestPoem = ()=>{
 <a-button @click="toEventBus" type="primary" primary>eventBus</a-button>
 <a-button @click="toPinia" type="primary" primary>pinia</a-button>
 <a-button @click="requestPoem" type="primary" primary>请求一个古诗</a-button>
+<a-button @click="toWatch" type="primary" primary>watch实践</a-button>
 {{ poem }}
 <router-view></router-view>
 

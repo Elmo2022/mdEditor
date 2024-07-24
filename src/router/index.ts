@@ -4,6 +4,7 @@ import mdEditor from '../views/mdEditor.vue';
 import VideoPlayer from '../views/videoPlayer.vue';
 import eventBus from '../views/eventBus.vue';
 import pinia from '../views/pinia.vue';
+import watchView from '../views/watchView.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -29,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/pinia',
     name: 'pinia',
     component: pinia,
+  },
+  {
+    path: '/watchView',
+    name: 'watchView',
+    component: watchView,
   },
   // 你可以添加更多的路由配置
 ];
