@@ -48,7 +48,7 @@ const firstName = ref('1111')
 const lastName = ref('ccc')
 const userName = ref('')
 const data = computed(() => {
-    alert("我要计算了")
+    // alert("我要计算了")
   return firstName.value + lastName.value
 })
 watch([firstName, lastName], ([newFirstName, newLastName], [oldFirstName, oldLastName]) => {

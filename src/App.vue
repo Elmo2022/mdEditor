@@ -33,9 +33,18 @@ async function fetchData() {
     console.error('Failed to fetch data:', error);
   }
 }
-const requestPoem = ()=>{
-  fetchData()
-}
+const requestPoem = async () => {
+  try {
+    // 发送请求并等待响应
+    const response = await request.get("https://api.apiopen.top/api/sentences");
+    // 返回响应数据
+    poem.value = response.data.result.name;
+  }  catch (error) {
+    // 处理请求过程中可能发生的错误
+    console.error('There was a problem with the axios request:', error);
+    throw error; // 可以选择将错误抛出，让调用者处理
+  }
+};
 
 </script>
 
