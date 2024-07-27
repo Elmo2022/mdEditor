@@ -44,7 +44,7 @@ import 'nprogress/nprogress.css'
 
 const request = axios.create({
     baseURL: 'https://api.apiopen.top/api/sentences',
-    timeout:5000
+    timeout:2000
 })
 
 
