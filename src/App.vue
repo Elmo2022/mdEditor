@@ -6,6 +6,7 @@ import { ref } from 'vue'
 import request from '../src/api'
 import pinia from '../src/views/pinia.vue'
 import watchView from '../src/views/watchView.vue'
+import FormComponent from './components/myForm.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const poem = ref('')
@@ -46,6 +47,36 @@ const requestPoem = async () => {
   }
 };
 
+
+const formItems = ref([
+  {
+    prop: 'username',
+    label: '用户名',
+    type: 'input',
+    defaultValue: '请输入用户名',
+    rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
+  },
+  {
+    prop: 'gender',
+    label: '性别',
+    type: 'select',
+    options: [
+      { value: 'male', label: '男' },
+      { value: 'female', label: '女' }
+    ]
+  },
+  {
+    prop: 'gender',
+    label: '性别',
+    type: 'select',
+    options: [
+      { value: 'male', label: '男' },
+      { value: 'female', label: '女' }
+    ]
+  },
+  // 可以继续添加其他表单项
+]);
+
 </script>
 
 <template>
@@ -55,7 +86,12 @@ const requestPoem = async () => {
 <a-button @click="toPinia" type="primary" primary>pinia</a-button>
 <a-button @click="requestPoem" type="primary" primary>请求一个古诗</a-button>
 <a-button @click="toWatch" type="primary" primary>watch实践</a-button>
+
 {{ poem }}
+
+<br>
+
+<FormComponent :form-items="formItems" />
 <router-view></router-view>
 
 </template>

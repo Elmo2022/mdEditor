@@ -12,6 +12,7 @@
     "@kangc/v-md-editor": "^2.3.18",
     "ant-design-vue": "^4.2.3",
     "axios": "^1.7.2",
+    "element-plus": "^2.7.8",
     "katex": "^0.16.10",
     "markdown-it-katex": "^2.0.3",
     "nprogress": "^0.2.0",

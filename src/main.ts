@@ -12,11 +12,13 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 //import markdownItKatex from 'markdown-it-katex';
 import 'katex/dist/katex.min.css';
 import Antd from 'ant-design-vue';
-
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import globalComponent from '../src/components/globalComponent.vue';
 const app = createApp(App);
 app.use(router)
 app.use(createPinia())
 app.use(Antd)
+app.use(ElementPlus)
 app.use(VMdEditor)
 app.component('global-component', globalComponent).mount('#app')
