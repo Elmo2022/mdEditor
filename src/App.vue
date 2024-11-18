@@ -88,20 +88,12 @@ const formItems = ref([
 <a-button @click="toWatch" type="primary" primary>watch实践</a-button>
 
 {{ poem }}
-
+{{ datas }}
 <br>
 
 <FormComponent :form-items="formItems" />
 <router-view></router-view>
-
 </template>
-
-
-
 <style  scoped>
 
-
 </style>
-
-
-  ./api

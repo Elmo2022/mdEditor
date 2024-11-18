@@ -39,14 +39,21 @@ const userName = computed(() => {
     <br>
     userName <input style="width: 200px" v-model="userName" placeholder="userName"></input>
     {{ data }}
+    <div v-if="loading">Loading...</div>
+  <div v-else-if="error">{{ error.message }}</div>
+  <div v-else>{{ datas }}</div>
+  {{ processedDatas }}
 </template>
 
 <script setup lang="ts">
-import { ref, watch ,computed} from 'vue'
+import { ref, watch ,computed,onMounted, toRaw} from 'vue'
+import { useFetch } from '../hook/useFetch';
+// 直接解构获取 useFetch 返回的 data、error、loading
 
 const firstName = ref('1111')
 const lastName = ref('ccc')
 const userName = ref('')
+const processedDatas = ref(null);
 const data = computed(() => {
     // alert("我要计算了")
   return firstName.value + lastName.value
@@ -55,6 +62,13 @@ watch([firstName, lastName], ([newFirstName, newLastName], [oldFirstName, oldLas
   userName.value = newFirstName + newLastName
 }, { immediate: true })
 
+onMounted(()=>{
+  console.log(123)
+  const { datas, error, loading } = useFetch('https://api.apiopen.top/api/sentences');
+  processedDatas.value = datas
+  console.log(toRaw(processedDatas))
+  
+})
 </script>
 
 <style>
